@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+	<title>Hospital</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+	   <link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/updateavaliblity.css">
+</head>
+<body>
+	<div ng-include="'header.html'"> </div>
+	
+	<main>
+
+		<div class="homeDescriptionContainer">
+			<h3>Book My Appointment</h3>
+
+			<form name="updateavailiblity" ng-submit="return submitavailiblity()">
+
+				
+				Date<input type="text" ng-model="Date" placeholder="Required"><br>
+				Time<input type="text" ng-mode="Time" placeholder="Required"><br>
+				
+				<button type="submit">Update an appointment</button>
+				<button type="submit">Back</button>
+
+			</form>
+		</div>
+	</main>
+	<div ng-include="'footer.html'"> </div>
+</body>
+
+</html>

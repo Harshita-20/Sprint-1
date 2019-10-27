@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Hospital</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+		<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+        <link rel="stylesheet" type="text/css" href="adminhome.css">
+    </head>
+    <body>
+        <div ng-include="'header.html'"> </div>
+        <div class="Logout">
+                
+                <a href="/Original-SSDI/index.html">Logout</a>
+            
+        </div>    
+      
+        <main>
+            
+            <div class="homeDescriptionContainer">
+                <h2 id="welcome"> Welcome!!</h2>
+			<button type="submit">View Patients Details</button>
+			<button type="submit">View Doctors Details</button>	
+            </div>
+               
+        </main>      
+         
+         <div ng-include="'footer.html'"> </div>      
+              
+    </body>
+</html>

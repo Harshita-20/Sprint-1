@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title>Hospital</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+	<script type="text/javascript" src="resource/js/bookAppointment.js"></script>
+    <link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/bookappointment.css">
+</head>
+
+<body ng-controller="BookingController">
+	<div ng-include="'header.html'"> </div>
+	
+	<main>
+
+		<div class="homeDescriptionContainer">
+			<h3>Book My Appointment</h3>
+
+			<form name="bookApointment" ng-submit="submitAppointment()">
+
+				Speciality <select ng-model="speciality">
+					<option value="--Required--">--Required--</option>
+					<option value="Dental">Dental</option>
+					<option value="Pysician">Pysician</option>
+					<option value="Cardiologist">Cardiologist</option>
+					<option value="Neuro surgeon">Neuro surgeon</option>
+					<option value="General surgeon">General surgeon</option>
+				</select> <br>
+				Date<input type="date" ng-model="Appointment_Date" placeholder="Required">
+				Time<input type="time" ng-mode="Appointment_Time" placeholder="Required"> 
+				Problem Description<input type="text" ng-model="Problem_Description" placeholder="Required">
+				Comments<input type="text" ng-model="Comments">
+				<button type="submit">Request an appointment</button>
+				
+			</form>
+		</div>
+	</main>
+	<div ng-include="'footer.html'"> </div>
+</body>
+
+</html>
