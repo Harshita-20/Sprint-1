@@ -9,21 +9,16 @@
         <link rel="stylesheet" type="text/css" href="Resources/Styles/doctorhome.css">
     </head>
     <body>
-        <div ng-include="'header.html'"> </div>
-        <div class="Logout">
-                
-                <a href="/Original-SSDI/index.html">Logout</a>
-            
-        </div>       
+        <div ng-include="'allheader.html'"> </div>   
       
         <main>
             
             <div class="homeDescriptionContainer">
-                <div id="welcome"> Welcome!</div>
-			<button type="submit" onclick="window.location.href = '/Original-SSDI/updateAvailability.html'">Update availability</button>
+                <h4 id="welcome"> Welcome!</h4>
+			<button type="submit" onclick="window.location.href = '/Original-SSDI/updateAvailability.html'">Update Availability</button>
+			<button type="submit" onclick="window.location.href = '/Original-SSDI/updateAvailability.html'">View Patient Details</button>
 			
-			 </div> 		
-               
+			 </div> 		             
         </main>         
       <div ng-include="'footer.html'"> </div>        
      </body>

@@ -10,7 +10,7 @@ public static Connection createConnection()
 Connection con = null;
 String url = "jdbc:mysql://localhost:3306/hms";
 String username = "root";
-String password = "";
+String password = "password";
  
 try
 {

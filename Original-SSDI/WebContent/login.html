@@ -9,10 +9,11 @@
 	<script type="text/javascript" src="resource/js/login.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/login.css">
 </head>
 
 <body ng-controller="LoginController">
-	<div ng-include="'header.html'"> </div>
+	<div ng-include="'allheader.html'"> </div>
 	<main>
 		<div class="homeDescriptionContainer">
 			<h3 id="loginheader">Login Page</h3>
@@ -26,7 +27,7 @@
 
 					<button type="submit">Login</button>
 
-					  <span style="color: red">{{message}}</span>
+					  <span style="color: red">{{errorMessage}}</span>
 				</form>
 			</div>
 		</div>

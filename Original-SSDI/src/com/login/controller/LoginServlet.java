@@ -6,9 +6,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,8 +39,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
 	    String password=request.getParameter("password");
 	    
 	    System.out.println(username);	
-	    System.out.println(password);	
-	    
+	    System.out.println(password);  
 	    
         LoginBean loginBean = new LoginBean();
        
@@ -54,15 +55,26 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
         
         String firstName = loginDao.retrieveFirstName(loginBean);
         System.out.println(firstName);
+        request.setAttribute("firstName", firstName);
+        
+        LoginBean loginBean1= new LoginBean();
+        loginBean1.setFirstName(firstName);
+        loginBean1.setMessage(userValidate);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("fName", firstName);
            
         //String userValidate1 = new Gson().toJson(userValidate);
         
              /**** Preparing The Output Response ****/
-       response.setContentType("text/html");
-       response.setCharacterEncoding("UTF-8");
-       PrintWriter out = response.getWriter();
-       out.write(userValidate);
+       //response.setContentType("text/html");
+      // response.setCharacterEncoding("UTF-8");
+       //PrintWriter out = response.getWriter();
+      // out.write(userValidate);
        //out.write(firstName);
        
+        String json = new Gson().toJson(loginBean1);
+		response.setContentType("application/json");
+		response.getWriter().write(json);
 }
 }

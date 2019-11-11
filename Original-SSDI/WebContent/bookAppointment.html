@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-
 <head>
 	<title>Hospital</title>
 	<meta charset="UTF-8">
@@ -9,36 +8,34 @@
 	<script type="text/javascript" src="resource/js/bookAppointment.js"></script>
     <link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
 	<link rel="stylesheet" type="text/css" href="Resources/Styles/bookappointment.css">
+
+	<script type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 </head>
-
 <body ng-controller="BookingController">
-	<div ng-include="'header.html'"> </div>
-	
+	<div ng-include="'allheader.html'"> </div>
 	<main>
-
 		<div class="homeDescriptionContainer">
 			<h3>Book My Appointment</h3>
-
-			<form name="bookApointment" ng-submit="submitAppointment()">
-
-				Speciality <select ng-model="speciality">
-					<option value="--Required--">--Required--</option>
-					<option value="Dental">Dental</option>
-					<option value="Pysician">Pysician</option>
-					<option value="Cardiologist">Cardiologist</option>
-					<option value="Neuro surgeon">Neuro surgeon</option>
-					<option value="General surgeon">General surgeon</option>
-				</select> <br>
-				Date<input type="date" ng-model="Appointment_Date" placeholder="Required">
-				Time<input type="time" ng-mode="Appointment_Time" placeholder="Required"> 
-				Problem Description<input type="text" ng-model="Problem_Description" placeholder="Required">
-				Comments<input type="text" ng-model="Comments">
-				<button type="submit">Request an appointment</button>
-				
-			</form>
+		<form name="bookApointment" ng-submit="submitAppointment()">
+          <div data-ng-init="onloadFun()">
+          Speciality:
+              <select id="speciality" ng-model="doctorssource" ng-options="speciality for (speciality, doctors) in specialities" 
+              ng-change="GetSelectedSpeciality()"><option value="select">Select</option>
+              </select><br><br>
+          Choose Doctor:<select id="doctor" ng-disabled="!doctorssource" ng-model="dcsource" ng-options="doctor for (doctor, doctorname) in doctorssource"
+          ng-change="GetSelectedDoctor()"><option value=''>Select</option>
+            </select><br><br>
+          </div>  
+			 Date<input type="date" ng-model="Appointment_Date" placeholder="yyyy-MM-dd" min="2019-11-01" max="2019-12-31" required>
+			Time<input type="time"  ng-model="Appointment_Time" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required>
+			Problem Description<input type="text" ng-model="Problem_Description" placeholder="Required">
+			Comments<input type="text" ng-model="Comments">
+			
+			<button type="submit">Request an appointment</button>
+			<span style="color: green">{{message}}</span>
+		</form>
 		</div>
 	</main>
 	<div ng-include="'footer.html'"> </div>
 </body>
-
 </html>

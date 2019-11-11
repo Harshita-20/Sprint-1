@@ -1,37 +1,19 @@
-.header{
-    background-color: #ffffff;
-    height: 90px;  
-}
 
-.header img {
-    float: left;
-    width: 90px;
-    height: 90px;
-    margin-top: 5px;
-    margin-left: 450px;
-}
-
-.header h1 {
-    color: #A6B436;
-    padding-top:20px;
-    padding-bottom: 10px;
-    position: relative;
-    font-family: Aleo Regular,Palatino Linotype,Palatino;
-}
-.logout {    
+.signup {    
    
-     padding: 10px 9px;     
+     padding: 4px 3px;     
      background-color: #ffffff;
 }
     
- .logout a{
+ .signup a{
        
      color: #003366;
      font-size: 16px;
      text-decoration: underline;
-	 padding-left: 1450px;
+	 padding-left: 1200px;
 	 text-align: right;
 }     
+   
 
 body{   
     width: 100%;
@@ -62,13 +44,13 @@ button {
    
     margin-top: 10px;
 	padding: 10px;
-    width: 70%;
+    width: 30%;
     border-radius: 1px;
     font-size: 16px;
 	font-weight: bold;
     color: black;
-    background-color: lightseagreen;
+    background-color: darkseagreen;
 }
 
 
-            
+

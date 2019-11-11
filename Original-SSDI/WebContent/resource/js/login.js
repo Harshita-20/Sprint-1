@@ -13,22 +13,24 @@ app.controller("LoginController", [ '$scope', '$http','$window', function($scope
               "username":$scope.username,
               "password":$scope.password  }
         }).then(function(response){
-             // $window.alert("Result Success"+response.data);
-
-             if (response.data=="Admin_Role")
+              $window.alert("Result Success"+response.data.firstName);
+              $window.alert("Result Success"+response.data.message);
+              $scope.firstName=response.data.firstName;
+              
+           if (response.data.message=="Admin_Role")
             {
                 $window.location.href='admin.html'
             }
-           else if (response.data=="Doctor_Role")
+           else if (response.data.message=="Doctor_Role")
             {
                 $window.location.href='doctor.html'
             }
-             else if (response.data=="Patient_Role")
+             else if (response.data.message=="Patient_Role")
             {
                 $window.location.href='patient.html'
             }
            else{
-               $scope.message="Invalid Credentials"
+               $scope.errorMessage="Invalid Credentials"
            } 
 
         },(function (response){

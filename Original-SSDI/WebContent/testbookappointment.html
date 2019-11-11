@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title>Hospital</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+	<script type="text/javascript" src="resource/js/bookAppointment.js"></script>
+    <link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/bookappointment.css">
+<script type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-controller="BookingController">
+	<div ng-include="'allheader.html'"> </div>
+	<main>
+		<div class="homeDescriptionContainer">
+			<h3>Book My Appointment</h3>
+		<form name="bookApointment" ng-submit="submitAppointment()">
+           <div data-ng-init="onloadFun()">
+         Speciality <select ng-model="speciality">
+					<option value="--Required--">--Required--</option>
+					<option value="Dental">Dental</option>
+					<option value="Physician">General Physician</option>
+					<option value="Cardiologist">Cardiologist</option>
+					<option value="Neuro surgeon">Neuro surgeon</option>
+					<option value="General surgeon">General surgeon</option>
+				</select> <br><br>
+				Select Doctor <select ng-model="chooseDoctor">
+				<option value="--Required--">--Required--</option>
+				</select> <br>
+			</div>	
+				Date<input type="date" ng-model="Appointment_Date" placeholder="yyyy-MM-dd" min="2019-11-01" max="2019-12-31" required>
+				Time<input type="time" ng-model="Appointment_Time" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required> 
+				Problem Description<input type="text" ng-model="Problem_Description" placeholder="Required">
+				Comments<input type="text" ng-model="Comments">
+				<button type="submit">Request an appointment</button>
+				<span style="color: green">{{message}}</span>
+				
+		</form>
+		</div>
+	</main>
+	<div ng-include="'footer.html'"> </div>
+</body>
+</html>

@@ -7,6 +7,8 @@ import java.time.LocalTime;
 
 public class BookAppointmentBean {
 
+	 private String PatientName;
+	 private String DoctorName;
 	 private String Specialist;
 	 private Date Appointment_Date;
 	 private Time Appointment_Time;
@@ -42,6 +44,18 @@ public class BookAppointmentBean {
 	}
 	public void setComments(String comments) {
 		Comments = comments;
+	}
+	public String getPatientName() {
+		return PatientName;
+	}
+	public void setPatientName(String patientName) {
+		PatientName = patientName;
+	}
+	public String getDoctorName() {
+		return DoctorName;
+	}
+	public void setDoctorName(String doctorName) {
+		DoctorName = doctorName;
 	}
 	
 	

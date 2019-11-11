@@ -2,14 +2,19 @@ package com.login.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.sql.Statement;
 import com.login.bean.RegisterBean;
 import com.login.util.DBConnection;
 
 public class RegisterDao {
 	 
-	 public String registerUser(RegisterBean registerBean)
+	    static ResultSet rsObj = null;
+		static Statement stmtObj = null;
+		static Connection connObj = null;
+
+public String registerUser(RegisterBean registerBean)
 	 {
 	 String firstName = registerBean.getFirstName();
 	 String lastName = registerBean.getLastName();
@@ -52,6 +57,6 @@ public class RegisterDao {
 	 
 	 return "Please check the details you have entered and Try Again !!";  // On failure, send a message from here.
 	 }
+	  
 	}
-
 

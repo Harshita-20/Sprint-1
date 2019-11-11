@@ -6,7 +6,7 @@ CREATE TABLE users(USERID INT auto_increment unique key,
 					FIRSTNAME VARCHAR(255) ,
 					LASTNAME VARCHAR(255) ,
                     PASSWORD VARCHAR(255) ,
-					EMAIL VARCHAR(255) PRIMARY KEY ,
+                    EMAIL VARCHAR(255) PRIMARY KEY ,
                     CONTACT VARCHAR(45) ,
                     GENDER VARCHAR(15) ,
                     ADDRESS VARCHAR(455),
@@ -23,4 +23,42 @@ Insert into users values(6, "admin", "admin", "abde123", "HMSadmin@gmail.com", "
 select * from users;
 
 
+CREATE TABLE AppointmentDetails (ID INT auto_increment unique key,
+					PatientName VARCHAR(30) ,
+					Specialist VARCHAR(30) ,
+                    Appointment_Date DATE,
+					Appointment_Time TIME ,
+                    Problem_Description VARCHAR(500) ,
+                    Comments VARCHAR(1000) );
+Alter table AppointmentDetails ADD column DoctorName varchar(50) after PatientName;
 
+Select * from AppointmentDetails;
+
+SELECT FIRSTNAME,EMAIL,GENDER FROM users where role='patient';
+
+TRUNCATE table AppointmentDetails
+
+CREATE TABLE DoctorDetails (ID INT auto_increment unique key,
+					DoctorName VARCHAR(30) ,
+					Specialisation VARCHAR(30) ,
+                    Email  VARCHAR(30),
+                    ModifyDate DATE,
+					FROMTIME TIME ,
+                    TOTIME TIME );
+                    
+Insert into DoctorDetails values (1, "Andrew Roy", "Dental", "andrewr@gmail.com", "2019-11-24","10:00","17:00");
+Insert into DoctorDetails values (2, "Jack Gran", "General Physician", "jackg@gmail.com", "2019-12-12","12:00","16:00");
+Insert into DoctorDetails values (3, "Dale Martis", "Cardiologist", "dalem@gmail.com", "2019-11-18","10:00","17:00");
+Insert into DoctorDetails values (4, "Bella Weasley", "Neuro Surgeon", "bellaw@gmail.com", "2019-12-28","14:00","17:00");
+Insert into DoctorDetails values (5, "Harry Shaw", "Dental", "harrys@gmail.com", "2019-11-22","13:00","17:00");
+
+select * from DoctorDetails;                  
+DROP table DoctorDetails;              
+                    
+UPDATE DoctorDetails SET  FROMTIME="15:00", TOTIME="18:00" WHERE EMAIL='jackg@gmail.com'   ; 
+
+
+Select Concat(slot_fromtime,'-', slot_totime) As TimeSlot from Slot
+where date='2019-11-08' AND doctor_name="Andrew Roy";
+
+           

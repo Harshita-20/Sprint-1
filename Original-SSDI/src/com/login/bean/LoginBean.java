@@ -5,6 +5,7 @@ public class LoginBean {
  private String userName;
  private String password;
  private String firstName;
+ private String message;
  
  public String getUserName() {
  return userName;
@@ -23,5 +24,11 @@ public String getFirstName() {
 }
 public void setFirstName(String firstName) {
 	this.firstName = firstName;
+}
+public String getMessage() {
+	return message;
+}
+public void setMessage(String message) {
+	this.message = message;
 }
 }

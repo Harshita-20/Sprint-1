@@ -19,5 +19,7 @@
 	<classpathentry kind="lib" path="C:/Users/Mounika Chebrolu/json-20190722.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mounika Chebrolu/json-simple-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mounika Chebrolu/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mounika Chebrolu/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,32 +1,79 @@
 <!DOCTYPE html>
-<html ng-app>
-    <head>
-        <title>Hospital</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
-		<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
-        <link rel="stylesheet" type="text/css" href="adminhome.css">
-    </head>
-    <body>
-        <div ng-include="'header.html'"> </div>
-        <div class="Logout">
-                
-                <a href="/Original-SSDI/index.html">Logout</a>
-            
-        </div>    
-      
-        <main>
-            
-            <div class="homeDescriptionContainer">
-                <h2 id="welcome"> Welcome!!</h2>
-			<button type="submit">View Patients Details</button>
-			<button type="submit">View Doctors Details</button>	
-            </div>
-               
-        </main>      
-         
-         <div ng-include="'footer.html'"> </div>      
-              
-    </body>
+<html ng-app="myApp">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>	
+	<script type="text/javascript" src="resource/js/admin.js"></script>
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/adminhome.css">
+</head>
+<body ng-controller="AdminController">
+	<div ng-include="'allheader.html'"> </div>
+
+	<main>
+		<div class="homeDescriptionContainer">
+			 <h3 id="welcome"> Welcome <span>{{firstName}}</span>  !!</h3>
+			<form name="patientDetails" ng-submit="getPatienData()">
+				<button type="submit">View Patient Details</button>
+
+				<div id="patientContainer" class="container" ng-show="patientList.length">
+				<table id="patientTbl" class="table table-bordered marginTop14" border=1>
+					<thead>
+						<tr>							
+							<th>FirstName</th>
+							<th>Specialist</th>
+							<th>Appointment_Date</th>
+							<th>Appointment_Time</th>
+							<th>Problem_Description</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="detail in patientList">
+							<td><span id="pat-firstname">{{detail.map.patientName}}</span></td>
+							<td><span id="pat-Specialist">{{detail.map.specialist}}</span></td>
+							<td><span id="pat-ADate">{{detail.map.appointment_Date}}</span></td>
+							<td><span id="pat-ATime">{{detail.map.appointment_Time}}</span></td>
+							<td><span id="pat-ProbDesc">{{detail.map.problem_Description}}</span></td>
+							<td><span id="pat-Comments">{{detail.map.comments}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</form>
+			<form name="doctorDetails" ng-submit="getDoctorData()">
+				<button type="submit">View Doctor Details</button>
+				
+			<div id="doctorContainer" class="container" ng-show="doctorList.length">
+				<table id="doctorTbl" class="table table-bordered marginTop14" border=1>
+					<thead>
+						<tr>							
+							<th>DoctorName</th>
+							<th>Specialization</th>
+							<th>Email</th>
+							<th>Date Available</th>
+							<th>From Time</th>
+							<th>To Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="details in doctorList">
+							<td><span id="pat-doctorName">{{details.map.doctorName}}</span></td>
+							<td><span id="pat-specialisation">{{details.map.specialisation}}</span></td>
+							<td><span id="pat-email">{{details.map.email}}</span></td>
+							<td><span id="pat-modifyDate">{{details.map.modifyDate}}</span></td>
+							<td><span id="pat-fROMTIME">{{details.map.FROMTIME}}</span></td>
+							<td><span id="pat-toTIME">{{details.map.TOTIME}}</span></td>
+						</tr>
+					</tbody>
+				</table>	
+				</div>			
+			</form>
+			<button class="slot" type="submit" onclick="window.location.href = '/Original-SSDI/slot.html'">Manage Appointment Slots</button>
+		</div >
+	</main>
+	<div ng-include="'footer.html'"> </div>
+</body>
 </html>

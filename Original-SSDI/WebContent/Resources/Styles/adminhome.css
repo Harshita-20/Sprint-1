@@ -1,4 +1,31 @@
-/* Admin Home Page */
+
+.signup {    
+   
+     padding: 4px 3px;     
+     background-color: #ffffff;
+}
+    
+ .signup a{
+       
+     color: #003366;
+     font-size: 16px;
+     text-decoration: underline;
+	 padding-left: 1200px;
+	 text-align: right;
+}     
+  
+button {
+   
+    margin-top: 10px;
+	padding: 10px;
+    width: 70%;
+    border-radius: 1px;
+    font-size: 16px;
+	font-weight: bold;
+    color: black;
+    background-color: darkseagreen;
+}
+
 
 .header{
     background-color: #ffffff;
@@ -6,9 +33,9 @@
 }
 
 .header img {
-    float: left;
-    width: 90px;
-    height: 90px;
+   float: left;
+    width: 110px;
+    height: 70px;
     margin-top: 5px;
     margin-left: 450px;
 }
@@ -20,20 +47,33 @@
     position: relative;
     font-family: Aleo Regular,Palatino Linotype,Palatino;
 }
-.Logout {    
-   
-     padding: 10px 9px;     
-     background-color: #ffffff;
-}
+
+.generalsite {
     
- .Logout a{
-       
-     color: #003366;
-     font-size: 16px;
-     text-decoration: underline;
-	 padding-left: 1450px;
-	 text-align: right;
-}     
+    overflow: hidden;
+    background-color: #A6B436;
+    padding: 10px 5px;
+    height: 25px;
+}
+
+.generalsite a {
+    
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    float: left;
+    padding-left:20px; padding-right: 20px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.generalsite a:hover {
+    
+  text-decoration: underline;
+  background-color: #cccccc;
+  color: black;
+}
 
 body{   
     width: 100%;
@@ -45,7 +85,7 @@ body{
 
 .homeDescriptionContainer {
     
-    height: 400px;
+    height: 800px;
     display: block;
     margin-left:10px;margin-top:5px;
     font-family:Aleo Regular,Palatino Linotype,Palatino;
@@ -56,21 +96,51 @@ body{
 #welcome{
     
     text-align: left;
-    color: green;
-    padding-left: 10px;
+    color: brown;
+    padding-left: 50px;
+}
+ 
+.imageContainer img{
+     float: left;
+	height: 170px;
+    width: 170px;
+	margin-top: 30px;
+	padding-right: 20px;
+	padding-left: 30px;
+            
 }
 
-button {
-   
-    margin-top: 10px;
-	padding: 10px;
-    width: 30%;
-    border-radius: 1px;
-    font-size: 16px;
-	font-weight: bold;
+#content{
+		
+      padding-left:300px;
+      padding-top: 30px;
+      font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;  
+
+}
+
+.indexfooterContainer p{
+    font-family:Aleo Regular,Palatino Linotype,Palatino;
+    float: right;
+}
+
+.indexfooterContainer a{
+    font-family:Aleo Regular,Palatino Linotype,Palatino;
+    text-decoration: none;
     color: black;
-    background-color: lightblue;
+    font-weight: bold;
+	padding-left: 20px;
 }
 
+.indexfooterContainer{
+    
+    clear: both;
+    height: 40px;
+    background-color:#A6B436 ;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 10px; 
+}
+
+ 
 
             

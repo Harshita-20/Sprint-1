@@ -10,6 +10,11 @@ public class RegisterBean {
 	 private String gender;
 	 private String address;
 	 
+	 public RegisterBean()
+	 {
+		 
+	 }
+	  
 	public String getFirstName() {
 		return firstName;
 	}
@@ -52,6 +57,5 @@ public class RegisterBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	 
 	 
 	}

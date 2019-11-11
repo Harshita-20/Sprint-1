@@ -1,11 +1,27 @@
 button {
    
     margin-top: 10px;
+    margin-left: 70px;
 	padding: 10px;
-    width: 70%;
+    width: 80%;
     border-radius: 1px;
     font-size: 15px;
 	font-weight: bold;
     color: black;
     background-color: lightblue;
 }
+
+.signup {    
+   
+     padding: 4px 3px;     
+     background-color: #ffffff;
+}
+    
+ .signup a{
+       
+     color: #003366;
+     font-size: 16px;
+     text-decoration: underline;
+	 padding-left: 1200px;
+	 text-align: right;
+} 
