@@ -4,7 +4,15 @@
         <title>Hospital</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+        <script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+       <script type="text/javascript" src="resource/js/login.js"></script>
+
+<script type="text/javascript">
+		function preback(){window.history.forward();}
+		setTimeout("preback()",0);
+		window.onunload=function(){null};
+
+	</script>
 		<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
         <link rel="stylesheet" type="text/css" href="Resources/Styles/patienthome.css">
     </head>
@@ -13,7 +21,7 @@
                
    <main>
    <div class="homeDescriptionContainer">
-                <div id="welcome"> Welcome!</div>
+                <div id="welcome"> Welcome {{data.firstName}}!</div>
 			<button type="submit" onclick="window.location.href = '/Original-SSDI/bookAppointment.html'">Book my appointment</button><br>
 			<button type="submit">Reschedule Appointment</button> <br>
 			<button type="submit">Cancel appointment</button><br>

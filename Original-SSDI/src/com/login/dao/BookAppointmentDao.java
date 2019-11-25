@@ -7,11 +7,20 @@ import java.sql.Time;
 import java.util.Date;
 import com.login.bean.BookAppointmentBean;
 import com.login.bean.LoginBean;
-import com.login.util.DBConnection;
+import com.login.util.ConnectionData;
+import com.login.util.ConnectionUtility;
+import com.login.util.IConnectionData;
 
 public class BookAppointmentDao {
 	
-
+	private IConnectionData conn_data;
+	
+	public BookAppointmentDao(IConnectionData conn_data) {
+	 this.conn_data = conn_data;
+	 }
+	
+	
+	
 	 public String bookAppointment(BookAppointmentBean bookAppointmentBean)
 	 {
      
@@ -43,7 +52,10 @@ public class BookAppointmentDao {
           
 	 try
 	 { 
-	 con = DBConnection.createConnection();
+	
+	    //ConnectionData conn_data = new ConnectionData();
+		con= ConnectionUtility.getConnection(conn_data);
+	 
 	 String query = "insert into AppointmentDetails(ID,PatientName,DoctorName,Specialist,Appointment_Date,Appointment_Time,Problem_Description,Comments) values (NULL,?,?,?,?,?,?,?)"; 
 	 preparedStatement = con.prepareStatement(query); //Making use of prepared statements here to insert bunch of data
 	 preparedStatement.setString(1, PatientName);
@@ -67,6 +79,6 @@ public class BookAppointmentDao {
 	 
 	 return "Please check the details you have entered and Try Again !!"; 
 	 }
-	
+
 	
 }

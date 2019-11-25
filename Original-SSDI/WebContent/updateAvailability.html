@@ -5,6 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+<script type="text/javascript">
+		function preback(){window.history.forward();}
+		setTimeout("preback()",0);
+		window.onunload=function(){null};
+
+	</script>
 	<script type="text/javascript" src="resource/js/doctorDetails.js"></script>
 	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -13,7 +19,7 @@
 	<div ng-include="'allheader.html'"> </div>
  <main>
 	<div class="homeDescriptionContainer">
-			<h3>Set my Availability</h3>
+			<h3>Set my Availability timings</h3>
 
 			<form name="updateavailability" ng-submit="updateAvailability()">
 

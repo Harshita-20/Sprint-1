@@ -5,15 +5,15 @@ app.controller("DoctorController", [ '$scope', '$http','$window', function($scop
     $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
 	$scope.updateAvailability = function()
 	 {
-        $window.alert("Calling Doctor Change_Date"+$scope.Change_Date+ "Time_From" +$scope.Time_From +"Time_To"+$scope.Time_To);
+       // $window.alert("Calling Doctor Change_Date"+$scope.Change_Date+ "Time_From" +$scope.Time_From +"Time_To"+$scope.Time_To);
          $http({
 			    url: "DoctorDetailsServlet",
 				method:"GET",
 				params : {"Change_Date": $scope.Change_Date,"Time_From": $scope.Time_From,"Time_To": $scope.Time_To}
 	  }).then(function(response){
-             $window.alert("Result Success"+response.data);
-            $window.alert(response.data);
-		if (response.data="Success")
+            // $window.alert("Result Success"+response.data);
+            //$window.alert(response.data);
+		if (response.data=="Success")
 		{
 			$scope.message="Your Timings have been Updated Successfully";
 			//$window.location.href='index.html'
@@ -22,10 +22,30 @@ app.controller("DoctorController", [ '$scope', '$http','$window', function($scop
           console.log(response.data);
         },(function (response){
              //fail case
-           $window.alert("Result Failure"+response);
+           //$window.alert("Result Failure"+response);
             $scope.message = response;
         }));
  
     }
+
+	$scope.getPatienDataforDoctor = function() {
+		
+		$window.alert("Calling Patients list for Doctor");
+
+		$http({
+			url : 'PatientListForDoctor',
+			method : "GET",			
+		}).then(function(response) {
+			if(response.data.myArrayList.length == 0) {
+				$scope.noEmpRecord = "Yes";
+			} else {
+				$scope.patientList = response.data.myArrayList;
+			}
+		}, function(response) {
+			console.log("Failure -> " + response.data);
+			$scope.empList = response.data.myArrayList;
+		});
+	}
 }
+
 ]);

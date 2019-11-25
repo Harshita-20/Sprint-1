@@ -5,7 +5,7 @@ app.controller("AdminController", [ '$scope', '$http','$window', function($scope
 	$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
 	$scope.getPatienData = function() {
 		
-		$window.alert("Calling speciality");
+		//$window.alert("Calling speciality");
 
 		$http({
 			url : 'PatientDetailsServlet',
@@ -24,7 +24,7 @@ app.controller("AdminController", [ '$scope', '$http','$window', function($scope
 	
 $scope.getDoctorData = function() {
 		
-		$window.alert("Calling Doctor Data");
+		//$window.alert("Calling Doctor Data");
 
 		$http({
 			url : 'GetDoctorDetailsServlet',
@@ -45,26 +45,29 @@ $scope.getDoctorData = function() {
 	
 $scope.updateSlot = function() {
 		
-	$window.alert("Calling slot times doctor"+$scope.selectDoctor+"Appointment_Date"+$scope.Appointment_Date+"slot"+$scope.slot);
+	//$window.alert("Calling slot times doctor"+$scope.selectDoctor+"Appointment_Date"+$scope.Appointment_Date+"slot"+$scope.slot);
 		$http({
-			url : 'AdminSlotServlet',
+			url : 'DoctorManageTimings',
 			method : "GET",
-			params : {"selectDoctor":$scope.selectDoctor,"Appointment_Date":$scope.Appointment_Date,"slot":$scope.slot}
+			params : {"Appointment_Date":$scope.Appointment_Date,"slot":$scope.slot}
 		}).then(function(response) {
-     		$window.alert(response.data);
+     		//$window.alert(response.data);
      		console.log(response);
 			if (response.data=="Success")
 			{
 				//$window.location.href='login.html';
-	            $scope.message="Slot Timings Have Been Updated Successfully for "+$scope.selectDoctor;
+	            $scope.message="Slot Timings Have Been Updated Successfully";
 			} else
 				{
-				$scope.message="Please check the details you have entered for "+$scope.selectDoctor+" and Try Again !!";
+				$scope.message="Please check the details you have entered and Try Again !!";
 				}
 		}, function(response) {
-			 $window.alert("Result Failure"+response);
+			// $window.alert("Result Failure"+response);
 	            $scope.message = response;
 		});
-	};	
-}		
+	};
+	
+	
+
+}
 ]);

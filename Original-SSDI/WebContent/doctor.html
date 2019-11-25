@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html ng-app = "">
+<html ng-app="myApp">
     <head>
         <title>Hospital</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+        <script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+        		<script type="text/javascript" src="resource/js/doctorDetails.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+<script type="text/javascript">
+		function preback(){window.history.forward();}
+		setTimeout("preback()",0);
+		window.onunload=function(){null};
+
+	</script>
         <link rel="stylesheet" type="text/css" href="Resources/Styles/doctorhome.css">
     </head>
     <body>
@@ -14,11 +22,40 @@
         <main>
             
             <div class="homeDescriptionContainer">
-                <h4 id="welcome"> Welcome!</h4>
-			<button type="submit" onclick="window.location.href = '/Original-SSDI/updateAvailability.html'">Update Availability</button>
-			<button type="submit" onclick="window.location.href = '/Original-SSDI/updateAvailability.html'">View Patient Details</button>
-			
-			 </div> 		             
+                <h4 id="welcome"> Welcome {{data.firstName}} !!</h4>
+                <p> Your regular timings are from 10:00 am - 01:00 pm and 02:00 pm - 05:00 pm </p>
+                <p> Wanna update your availability ?? Click below </p>
+			<button type="submit" onclick="window.location.href = '/Original-SSDI/slot.html'">Update Availability</button>
+            <br>
+            </div>
+            
+            <form name="patientDetails" ng-submit="getPatienDataforDoctor()" ng-controller="DoctorController">
+				<button type="submit">View Patient Information</button>
+
+				<div id="patientContainer" class="container" ng-show="patientList.length">
+				<table id="patientTbl" class="table table-bordered marginTop14" border="1">
+					<thead>
+						<tr>							
+							<th>FirstName</th>
+							<th>Appointment_Date</th>
+							<th>Appointment_Time</th>
+							<th>Problem_Description</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="detail in patientList">
+							<td><span id="pat-firstname">{{detail.map.patientName}}</span></td>
+							<td><span id="pat-ADate">{{detail.map.appointment_Date}}</span></td>
+							<td><span id="pat-ATime">{{detail.map.appointment_Time}}</span></td>
+							<td><span id="pat-ProbDesc">{{detail.map.problem_Description}}</span></td>
+							<td><span id="pat-Comments">{{detail.map.comments}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</form>
+		
         </main>         
       <div ng-include="'footer.html'"> </div>        
      </body>

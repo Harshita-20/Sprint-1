@@ -29,7 +29,7 @@
      color: #003366;
      font-size: 16px;
      text-decoration: underline;
-	 padding-left: 600px;
+	 padding-left: 1400px;
 	 text-align: right;
 }     
 
@@ -39,6 +39,7 @@
     background-color: #A6B436;
     padding: 10px 5px;
     height: 25px;
+    width: 1500px
 }
 
 .generalsite a {
@@ -70,7 +71,7 @@ body{
 
 .homeDescriptionContainer {
     
-    height: 650px;
+    height: 680px;
     display: block;
     margin-left:10px;margin-top:5px;
     font-family:Aleo Regular,Palatino Linotype,Palatino;
@@ -101,8 +102,11 @@ body{
     padding-left: 10px; 
 }
 
-h2{
-	padding-left: 100px;
+#loginheader{
+	padding-left: 580px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; 
+	font-weight: bold;
+	font-size:18px;
 }
 form{
 	padding-left: 100px;
@@ -119,24 +123,73 @@ input[type="tel"]{
 	width: 90%;
 	display: block;
 	margin-bottom: 5px;
+	height: 15px;
 }
-input[type="radio"]{padding-left: 40px}
+input[type="radio"]{padding-left: 40px; display: block-inline;}
 label{
 	width: 80%;
-	display: block;
+	display: block-inline;
 	padding-top:1px;
 	padding-right: 10px;
 	
+}
+select{
+	padding-left:15px;
+	margin-left:10px;
+	height:24px;
 }
 
 button {
    
     margin-top: 10px;
 	padding: 10px;
-    width: 30%;
+    width: 20%;
     border-radius: 1px;
     font-size: 16px;
 	font-weight: bold;
     color: black;
-    background-color: lightgreen;
+    background-color:darkseagreen;
+    margin-left:300px;
+}
+
+#registerForm {
+  	width: 800px;
+  	height:600px;
+  	max-width: 100%;
+  	padding-left:10px;
+  	margin: 5px auto;
+  	margin-left:250px;
+  	background-color: #d0dbdb;
+}
+#registerForm  input[type ='text'],  input[type ='email'],  input[type ='password'],  input[type ='number'],select{
+  	display: inline-block;
+  	margin: 10px ;
+  	padding: 4px;
+  	width: 150%;
+  	height:30px;
+   border: 1px ;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#registerForm  input[type='submit']{
+  	width: auto
+}
+table {
+
+	table-layout: fixed;
+	width: 100%;
+	padding-top:2%;
+}
+table, tr, td {
+    border: none;
+}
+addr{
+	display: block;
+}
+.city{
+	margin-left:100px;
+}
+input radio{
+	display: inline-block;
+	padding: 10px;
 }

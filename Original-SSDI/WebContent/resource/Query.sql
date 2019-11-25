@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS HMS;
 CREATE DATABASE HMS ;
 USE HMS;
 drop table users;
+select * from users
+
 CREATE TABLE users(USERID INT auto_increment unique key,
 					FIRSTNAME VARCHAR(255) ,
 					LASTNAME VARCHAR(255) ,
@@ -58,7 +60,7 @@ DROP table DoctorDetails;
 UPDATE DoctorDetails SET  FROMTIME="15:00", TOTIME="18:00" WHERE EMAIL='jackg@gmail.com'   ; 
 
 
-Select Concat(slot_fromtime,'-', slot_totime) As TimeSlot from Slot
-where date='2019-11-08' AND doctor_name="Andrew Roy";
-
+Select Concat(fromtime,'-', totime) As TimeSlot from DoctorDetails
+where modifydate='2019-11-16' AND doctorname="Andrew Roy";
+SELECT * FROM DoctorDetails where Concat(fromtime,'-', totime) != "10:00:00-17:00:00" ;
            

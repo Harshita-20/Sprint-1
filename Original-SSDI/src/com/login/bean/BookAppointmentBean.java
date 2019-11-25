@@ -1,14 +1,13 @@
 package com.login.bean;
 
 import java.util.Date;
-import java.util.*;
 import java.sql.Time;
-import java.time.LocalTime;
 
 public class BookAppointmentBean {
 
 	 private String PatientName;
 	 private String DoctorName;
+	 private String Email;
 	 private String Specialist;
 	 private Date Appointment_Date;
 	 private Time Appointment_Time;
@@ -56,6 +55,12 @@ public class BookAppointmentBean {
 	}
 	public void setDoctorName(String doctorName) {
 		DoctorName = doctorName;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
 	}
 	
 	

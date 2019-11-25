@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function random_function()
+            {
+                var a=document.getElementById("input").value;
+                if(a==="Dental")
+                {
+                    var arr=["Andrew Roy","Dale Martis"];
+                }
+                else if(a==="Cardiologist")
+                {
+                    var arr=["Jason Roy","Alex Hales"];
+                }
+               
+                var string="";
+               
+                for(i=0;i<arr.length;i++)
+                {
+                    string=string+"<option>"+arr[i]+"</option>";
+                }
+                string="<select name='any_name'>"+string+"</select>";
+                document.getElementById("output").innerHTML=string;
+            }
+        </script>
+    </head>
+    <body>
+      Speciality  <select id="input" onchange="random_function()">
+            <option>Select Speciality</option>
+            <option>Dental</option>
+            <option>Cardiologist</option>
+        </select>
+      Doctor  <div id="output">
+       <select> <option>Select Doctor</option>   </select>
+        </div>
+    </body>
+</html>

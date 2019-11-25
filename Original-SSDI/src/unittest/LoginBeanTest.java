@@ -5,48 +5,29 @@ import org.junit.Test;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.verification.VerificationMode;
 import com.login.bean.LoginBean;
+
 public class LoginBeanTest {
-private LoginBean Login1;
-@Test
-public void TestWithCorrectParams() {
+	private LoginBean Login1;
 
-Login1 = new LoginBean();
-Login1.setUserName("HMSadmin@gmail.com");
-Login1.setPassword("abde123");
+	@Test
+	public void BeanTest() {
 
-new VerificationMode() {{
-assertEquals("HMSadmin@gmail.com", Login1.getUserName());
-assertEquals("abde123", Login1.getPassword());
-}
+		Login1 = new LoginBean();
+		Login1.setUserName("HMSadmin@gmail.com");
+		Login1.setPassword("abde123");
 
-@Override
-public void verify(VerificationData data) {
-	
-}};
+		new VerificationMode() {
+			{
+				assertEquals("HMSadmin@gmail.com", Login1.getUserName());
+				assertEquals("abde123", Login1.getPassword());
+			}
 
+			@Override
+			public void verify(VerificationData data) {
 
-};
+			}
+		};
 
-@Test
-public void TestWithincorrectParams() {
-
-Login1 = new LoginBean();
-Login1.setUserName("HMSadmin");
-Login1.setPassword( "abde13");
-
-
-new VerificationMode() {{
-assertEquals("HMSadmin", Login1.getUserName());
-assertEquals("abde13", Login1.getPassword());
-}
-
-@Override
-public void verify(VerificationData data) {
-	// TODO Auto-generated method stub
-}};
-
+	};
 
 };
-
-};
-
